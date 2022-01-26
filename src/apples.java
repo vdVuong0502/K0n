@@ -1,8 +1,11 @@
+import java.util.Scanner;
 
 public class apples {
 
 	public static void main(String[] args) {
-		System.out.println("Hello Youtube!");
-
+		Scanner K0n = new Scanner(System.in);
+		
+		System.out.println(K0n.nextLine());
+		K0n.close();
 	}
 }
