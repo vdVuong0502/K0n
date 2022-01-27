@@ -2,6 +2,12 @@
 public class Pale {
 	private String girlName;
 	
+	public Pale(String name) {
+		girlName = name;
+	}
+	
+	public Pale() {}
+	
 	public void setName(String name) {
 		girlName = name;
 	}
