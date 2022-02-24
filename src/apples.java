@@ -9,6 +9,14 @@ public class apples {
 		int average;
 		int count = 0;
 		
+		while (count < 10) {
+			grade =  input.nextInt();
+			total += grade;
+			count++;
 		}
+		
+		average = total / (count + 1);
+		System.out.println("average is " + average);
+		
 	}
 }
