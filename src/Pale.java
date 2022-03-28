@@ -1,21 +1,20 @@
-
-public class Pale {
-	private String girlName;
+class Pale {
+	private int hour;
+	private int minute;
+	private int second;
 	
-	public Pale(String name) {
-		girlName = name;
+	
+	public void setTime(int h, int m, int s) {
+		hour = ((h >= 0 && h < 24) ? h : 0);
+		minute = ((m >= 0 && m < 60) ? m : 0);
+		second = ((s >= 0 && s < 60) ? s : 0);
 	}
 	
-	public Pale() {}
-	
-	public void setName(String name) {
-		girlName = name;
-	}
-	public String getName() {
-		return girlName;
+	public String toMil() {
+		return String.format("%02d:%02d:%02d", hour, minute, second);
 	}
 	
-	public void saying() {
-		System.out.printf("Your girl deskmate's name is %s", getName());
+	public String toString() {
+		return String.format("%d:%02d:%02d %s", (hour == 0 || hour == 12)? 12 : hour % 12, minute, second, (hour < 12) ? "am" : "pm");
 	}
 }

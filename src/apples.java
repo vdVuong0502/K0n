@@ -1,16 +1,13 @@
+
+
 public class apples {
 
 	public static void main(String[] args) {
-		System.out.println(average(437,435,234,224));
+		Pale pObject = new Pale();
 		
-	};
-	
-	public static double average(double...numbers) {
-		double total = 0;
-		for (double x : numbers)
-			total += x;
+		pObject.setTime(0, 27, 6);
 		
-		return total / numbers.length;
+		System.out.println(pObject);
 		
 	}
 }
