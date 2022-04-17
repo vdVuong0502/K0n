@@ -48,10 +48,16 @@ public class Ex1 {
 	
 */
 		
-// bubble sort
-		int[] arr = {18, 9, 33, 4, 84, 32};
-		bubbleSort(arr);
+// bubble sort		
+//		int[] arr = {18, 9, 33, 4, 84, 32};
+//		bubbleSort(arr);
 		
+//selection sort
+		/*
+		int[] arr = {18, 9, 33, 4, 84, 32};
+		selectionSort(arr);
+		printArr(arr);
+		*/
 	}
 	static int fibonacci1(int n) {
 		int[] fib = new int[n];
@@ -133,6 +139,30 @@ public class Ex1 {
 		}
 		
 		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+	}
+	
+	static void selectionSort(int[] arr) {
+		int temp = 0;
+		int tempIndex = 0;
+		
+		for (int i = 0; i < arr.length; i++) {
+			tempIndex = i;
+			for (int k = i + 1; k < arr.length; k++) {
+				if (arr[k] < arr[tempIndex]) {
+					tempIndex = k;
+				}
+			}
+			
+			temp = arr[tempIndex];
+			arr[tempIndex] = arr[i];
+			arr[i] = temp;
+		}
+	}
+	
+	static void printArr(int[] arr) {
+		for(int i = 0; i < arr.length; i++) {
 			System.out.print(arr[i] + " ");
 		}
 	}
