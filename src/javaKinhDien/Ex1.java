@@ -34,6 +34,7 @@ public class Ex1 {
 		
 // tinh giai thua
 		
+/*		
 		System.out.print("Nhap so muon tinh giai thua: ");
 		int  n = scan.nextInt();
 		if (n < 0) {
@@ -44,8 +45,14 @@ public class Ex1 {
 			
 		}
 		
-	}
 	
+*/
+		
+// bubble sort
+		int[] arr = {18, 9, 33, 4, 84, 32};
+		bubbleSort(arr);
+		
+	}
 	static int fibonacci1(int n) {
 		int[] fib = new int[n];
 		int f1 = 0;
@@ -110,5 +117,24 @@ public class Ex1 {
 		}
 	}
 	
+	static void bubbleSort(int[] arr) {
+		int temp = 0;
+	
+		for (int i = 0; i < arr.length - 1; i++) {
+			for (int k = 0; k < arr.length - (i + 1); k++) {
+				if (arr[k] > arr[k+1]) {
+					
+					temp = arr[k];
+					arr[k] = arr[k+1];
+					arr[k+1] = temp;
+					
+				}
+			}
+		}
+		
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+	}
 	
 }
