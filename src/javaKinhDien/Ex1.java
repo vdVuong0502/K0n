@@ -2,15 +2,24 @@ package javaKinhDien;
 import java.util.Scanner;
 public class Ex1 {
 	public static void main(String[] args) {
+		
+		
 		Scanner scan = new Scanner(System.in);
 		
-//		System.out.print("Nhap gioi han day so fibonacci: ");
-//		int n = scan.nextInt();
-//		
-//		System.out.printf("%d so Fibonacci:\n", n);
-//		for (int i = 1; i <= n; i++) {
-//			System.out.println(fibonacci2(i) + " ");
-//		}
+//		day so fibonacci
+/*		
+		System.out.print("Nhap gioi han day so fibonacci: ");
+		int n = scan.nextInt();
+		
+		System.out.printf("%d so Fibonacci:\n", n);
+		for (int i = 1; i <= n; i++) {
+			System.out.println(fibonacci2(i) + " ");
+		}
+	*/	
+		
+// 		kiem tra so nguyen to		
+		
+		/*
 		
 		System.out.print("Nhap so muon kiem tra: ");
 		int n = scan.nextInt();
@@ -20,6 +29,19 @@ public class Ex1 {
 			
 		} else {
 			System.out.printf("%d la so nguyen to.", n);
+		}
+		*/
+		
+// tinh giai thua
+		
+		System.out.print("Nhap so muon tinh giai thua: ");
+		int  n = scan.nextInt();
+		if (n < 0) {
+			System.out.printf("%d khong duoc la so am\n", n);
+			
+		} else {
+			System.out.printf("%d! = %d", n, factorial2(n));
+			
 		}
 		
 	}
@@ -69,6 +91,23 @@ public class Ex1 {
 		}
 		return 1;
 		
+	}
+	
+	static long factorial1(int n) {
+		long f = 1;
+		if (n == 0) return f;
+		for (int i = 1; i <= n; i++) {
+			f *= i;
+		}
+		return f;
+	}
+	
+	static long factorial2(int n) {
+		if (n == 0 || n == 1) {
+			return 1;
+		} else {
+			return n*factorial2(n - 1);
+		}
 	}
 	
 	
