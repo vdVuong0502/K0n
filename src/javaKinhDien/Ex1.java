@@ -67,12 +67,23 @@ public class Ex1 {
 		printArr(arr);
 		*/
 // chuyen doi he co so 10 sang he co so B, 2 <= B <= 16		
+		/*
 		System.out.print("Nhap vao so muon chuyen doi: ");
 		int n = scan.nextInt();
 		scan.nextLine();
 		System.out.print("Nhap vao he co so muon chuyen doi: ");
 		int d = scan.nextInt();
 		
+		System.out.println(convert10(n, d));
+		*/
+
+// chuyen doi he co so B sang he co so 10, 2 <= B <= 16
+		
+		System.out.print("Nhap vao he co so B: ");
+		int d = scan.nextInt();
+		System.out.print("Nhap vao so muon chuyen sang he thap phan: ");
+		scan.nextLine();
+		String n = scan.nextLine();
 	}
 	static int fibonacci1(int n) {
 		int[] fib = new int[n];
@@ -204,5 +215,20 @@ public class Ex1 {
 		}
 	}
 	
+	static String convert10(int n, int d) {
+		String result = "";
+		int remainder;
+		while (n  > 0) {
+			remainder = n % d;
+			n = n / d;
+			if (remainder <= 9) {
+				result = (char) (remainder + 48) + result;
+			} else {
+				result = (char) (remainder + 55) + result;
+			}
+		}
+		
+		return result;
+	}
 	
 }
