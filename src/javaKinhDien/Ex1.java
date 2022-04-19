@@ -84,6 +84,9 @@ public class Ex1 {
 		System.out.print("Nhap vao so muon chuyen sang he thap phan: ");
 		scan.nextLine();
 		String n = scan.nextLine();
+		
+		System.out.println(convertB(n, d));
+		
 	}
 	static int fibonacci1(int n) {
 		int[] fib = new int[n];
@@ -218,6 +221,11 @@ public class Ex1 {
 	static String convert10(int n, int d) {
 		String result = "";
 		int remainder;
+		
+		if (d == 10) {
+			return Integer.toString(n);
+		}
+		
 		while (n  > 0) {
 			remainder = n % d;
 			n = n / d;
@@ -231,4 +239,21 @@ public class Ex1 {
 		return result;
 	}
 	
+	static int convertB(String B, int d) {
+        int result = 0;
+        if (d == 10) {
+            return Integer.parseInt(B);
+        } else {
+            for (int i = 0; i < B.length(); i++) {
+                if (B.charAt(i) <= 57) {
+                    result += Integer.parseInt(B.substring(i, i + 1)) * Math.pow(d, B.length() - (i + 1));
+                } else {
+                    result += ((int) B.charAt(i) - 55) * Math.pow(d, B.length() - i);
+                }
+            }
+
+        }
+
+        return result;
+    }
 }
