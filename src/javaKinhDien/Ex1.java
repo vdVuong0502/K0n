@@ -58,6 +58,21 @@ public class Ex1 {
 		selectionSort(arr);
 		printArr(arr);
 		*/
+		
+// insertion sort
+		/*
+		 
+		int[] arr = {18, 9, 33, 4, 84, 32};
+		insertionSort(arr);
+		printArr(arr);
+		*/
+// chuyen doi he co so 10 sang he co so B, 2 <= B <= 16		
+		System.out.print("Nhap vao so muon chuyen doi: ");
+		int n = scan.nextInt();
+		scan.nextLine();
+		System.out.print("Nhap vao he co so muon chuyen doi: ");
+		int d = scan.nextInt();
+		
 	}
 	static int fibonacci1(int n) {
 		int[] fib = new int[n];
@@ -166,5 +181,28 @@ public class Ex1 {
 			System.out.print(arr[i] + " ");
 		}
 	}
+	/*
+	 * if arr[i] < arr[k], increase the index of the rest by 1
+	 * if arr[i] >= arr[k], insert into that position 
+	 * */
+	static void insertionSort(int[] arr) {
+		int temp;
+		int tempIndex;
+		int count = 0; 
+		for (int i = 1; i < arr.length; i++) {
+			temp = arr[i];
+			tempIndex = i;
+			count = 0;
+			for (int k = i - 1; k >= 0; k--) {
+				if (temp < arr[k]) {
+					arr[tempIndex] = arr[k];
+					arr[k] = temp;
+					tempIndex--;
+				}
+			}
+			
+		}
+	}
+	
 	
 }
